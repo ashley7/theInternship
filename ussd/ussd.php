@@ -37,10 +37,23 @@ switch ($level) {
 
 		break;
 
-	case 2:		 
+	case 2:		// text = 0*1  OR  0*2 
 
-		echo "CON At index 0 = ".$inputArray[0]."\n Index 1 = ".$inputArray[1];
+		 if($inputArray[1]   ==  1) {//he wants to register
+
+		 	echo "CON What is is your name?";
+
+
+
+		 }elseif ($inputArray[1] == 2) {//he wants to add a tree
+
 		 
+		 }else{
+
+		 	echo "END Invalid option";
+
+		 }
+		  
 		break;
 
 	case 3:
