@@ -51,6 +51,16 @@ switch ($level) {
 
 		 }elseif ($inputArray[1] == 2) {//he wants to add a tree
 
+		 	$checkmembers = $sqliCon->query("SELECT * FROM members WHERE phone_number = '$phone_number' ");
+
+		 	if($checkmembers->num_rows() == 0) 
+
+		 		echo "END Use with phone_number $phone_number has no account";
+
+		 	else 
+				
+				echo "CON ".$checkmembers['name']."\n Enter the number of trees";	  
+
 		 
 		 }else{
 
@@ -85,10 +95,10 @@ switch ($level) {
 		 	}
 
 
-
-
-
 		 }elseif ($inputArray[1] == 2) {//he wants to add a tree
+
+
+		 	
 
 		 
 		 }  
@@ -129,7 +139,7 @@ if ($level == 0) {
 
 //   1. Register 
 //   2. Add a tree 
-//   3. Council 
+ 
 
 // 1.  WHat is your name?
 //     send them sms that they have registered 
