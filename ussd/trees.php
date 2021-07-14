@@ -42,7 +42,7 @@ require('sql_connection.php');
 
 				   	 	    <td>$phone </td>
 				   	 	    <td>$name </td>
-				   	 	    <td>$name </td>
+				   	 	    <td>$total </td>
  
 
 				   	 	  </tr>
