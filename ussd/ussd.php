@@ -9,6 +9,6 @@ $sessionID = $_POST['sessionId'];
 
 $serviceCode = $_POST['serviceCode'];
 
-echo "END Welcome to the Climate portal";
+echo "Welcome to the Climate portal";
 
 
