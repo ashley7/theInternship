@@ -71,7 +71,7 @@ switch ($level) {
 		 	if($saveUser){
 
 		 		$message = "Hello ".$user_name." Thank you for registering with Climate (U) ltd";		        
-				$apikey     = "5c3350028b90259929735448c01796d9b12f765d3a18c5ef1b23106082872934";			 
+				$apikey     = "8ca31226367ab4abde28fc34a62a2ef852d0e730b66c02348c98ed7499ca087c";			 
 				$gateway    = new AfricasTalkingGateway("sandbox", $apikey,"sandbox");
 
 				$gateway->sendMessage($phone_number, $message); 
@@ -79,7 +79,9 @@ switch ($level) {
 				echo "END Thank you for registering"; 
 
 		 	}else{
+
 		 		echo "END Failed to register ".$sqliCon->error;
+
 		 	}
 
 

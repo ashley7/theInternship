@@ -2,9 +2,9 @@
 require('AfricasTalkingGateway.php');
  
 $username   = "sandbox";            
-$apikey     = "5c3350028b90259929735448c01796d9b12f765d3a18c5ef1b23106082872934";
+$apikey     = "8ca31226367ab4abde28fc34a62a2ef852d0e730b66c02348c98ed7499ca087c";
 
-$recipients = "+256787665544";
+$recipients = "+256787665522";
 
 $gateway    = new AfricasTalkingGateway($username, $apikey,"sandbox");
 
