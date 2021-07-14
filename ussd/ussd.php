@@ -13,6 +13,10 @@ if(empty($textFromUser)){
 
 	$textFromUser = "0";
 
+}else{
+
+	$textFromUser = "0*".$textFromUser;
+
 }
 
 $inputArray = explode("*", $textFromUser);
@@ -21,7 +25,7 @@ $level = count($inputArray);
 
 switch ($level) {
 
-	case 0:
+	case 1:
 
 		$response = "CON Welcome to the Climate (U) Limited";
 
@@ -33,12 +37,12 @@ switch ($level) {
 
 		break;
 
-	case 1:
+	case 2:
 
 		 
 		break;
 
-	case 2:
+	case 3:
 
 
 	 
