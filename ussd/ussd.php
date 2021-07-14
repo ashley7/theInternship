@@ -132,13 +132,8 @@ switch ($level) {
 		 	echo "END No user found";
 
 		 }
-
-		 	
-
-
-
-		 
-		 }  
+	 
+	}  
 
 	 
 		break;
@@ -149,23 +144,6 @@ switch ($level) {
 
 		break;
 }
-
-
- 
-if ($level == 0) {
-
-	
-	 
-}  
-
-
-
-
-
-
- 
-
-
 
 
 
