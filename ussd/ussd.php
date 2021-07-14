@@ -1,6 +1,10 @@
 <?php
 header("Content-type:text/plane");
 
+require('../AfricasTalkingGateway.php');
+
+require('sql_connection.php');
+
 $phone_number = $_POST['phoneNumber'];
 
 $textFromUser = $_POST['text'];
@@ -39,7 +43,7 @@ switch ($level) {
 
 	case 2:		// text = 0*1  OR  0*2 
 
-		 if($inputArray[1]   ==  1) {//he wants to register
+		 if($inputArray[1]   ==  1) {//he wants to register// 
 
 		 	echo "CON What is is your name?";
 
@@ -56,8 +60,32 @@ switch ($level) {
 		  
 		break;
 
-	case 3:
+	case 3: // 0*1*Charles
 
+	     if($inputArray[1]   ==  1) {//he wants to register// 
+
+		 	$user_name = $inputArray[2];
+
+		 	$saveUser = $sqliCon->query("INSERT INTO members(phone_number,name)VALUES('$phone_number','$user_name')");
+
+		 	if($saveUser){
+
+		 		$message = "Hello ".$user_name." Thank you for registering with Climate (U) ltd";		        
+				$apikey     = "5c3350028b90259929735448c01796d9b12f765d3a18c5ef1b23106082872934";			 
+				$gateway    = new AfricasTalkingGateway("sandbox", $apikey,"sandbox");
+
+				$gateway->sendMessage($phone_number, $message);  
+
+		 	}
+
+		 	echo "END Thank you for registering";
+
+
+
+		 }elseif ($inputArray[1] == 2) {//he wants to add a tree
+
+		 
+		 }  
 
 	 
 		break;
