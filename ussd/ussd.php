@@ -55,7 +55,7 @@ switch ($level) {
 
 		 	if($checkmembers->num_rows == 0) 
 
-		 		echo "END Use with phone_number $phone_number has no account";
+		 		echo "END User with phone_number $phone_number has no account";
 
 		 	else{
 
@@ -78,9 +78,9 @@ switch ($level) {
 		  
 		break;
 
-	case 3: // 0*1*Charles
+	case 3: 
 
-	     if($inputArray[1]   ==  1) {//he wants to register// 
+	     if($inputArray[1]   ==  1) {//he wants to register// // 0*1*Charles
 
 		 	$user_name = $inputArray[2];
 
@@ -103,8 +103,25 @@ switch ($level) {
 		 	}
 
 
-		 }elseif ($inputArray[1] == 2) {//he wants to add a tree
+		 }elseif ($inputArray[1] == 2) {//he wants to add a tree// // 0*2*7837
 
+		 	$number_of_trees = $inputArray[2];
+
+		 	$checkmembers = $sqliCon->query("SELECT id,name FROM members WHERE phone_number = '$phone_number'");
+
+		 	$member_id = $checkmembers['id'];
+
+		 	$member_name = $checkmembers['name'];
+
+		 	$sqliCon->query("INSERT INTO trees(member_id,number_of_trees)VALUES('$member_id','$number_of_trees')");
+
+		 	$message = "Hello $member_name, Thank you for conserving the climate. You have recorded $number_of_trees tree(s)";
+			$apikey     = "8ca31226367ab4abde28fc34a62a2ef852d0e730b66c02348c98ed7499ca087c";			 
+			$gateway    = new AfricasTalkingGateway("sandbox", $apikey,"sandbox");
+			$gateway->sendMessage($phone_number, $message); 
+
+
+		 	echo "END $message";
 
 
 
