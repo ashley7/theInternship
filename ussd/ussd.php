@@ -109,19 +109,31 @@ switch ($level) {
 
 		 	$checkmembers = $sqliCon->query("SELECT id,name FROM members WHERE phone_number = '$phone_number'");
 
-		 	$member_id = $checkmembers['id'];
+		 	if($checkmembers->num_rows == 1){
+		 
+		 	while ($rows = $checkmembers->fetch_assoc()) {
 
-		 	$member_name = $checkmembers['name'];
+		 		$member_id = $rows['id'];
 
-		 	$sqliCon->query("INSERT INTO trees(member_id,number_of_trees)VALUES('$member_id','$number_of_trees')");
+		 	    $member_name = $rows['name'];
 
-		 	$message = "Hello $member_name, Thank you for conserving the climate. You have recorded $number_of_trees tree(s)";
-			$apikey     = "8ca31226367ab4abde28fc34a62a2ef852d0e730b66c02348c98ed7499ca087c";			 
-			$gateway    = new AfricasTalkingGateway("sandbox", $apikey,"sandbox");
-			$gateway->sendMessage($phone_number, $message); 
+		 	    $sqliCon->query("INSERT INTO trees(member_id,number_of_trees)VALUES('$member_id','$number_of_trees')");
 
+		 	    $message = "Hello $member_name, Thank you for conserving the climate. You have recorded $number_of_trees tree(s)";
+			    $apikey     = "8ca31226367ab4abde28fc34a62a2ef852d0e730b66c02348c98ed7499ca087c";			 
+			    $gateway    = new AfricasTalkingGateway("sandbox", $apikey,"sandbox");
+			    $gateway->sendMessage($phone_number, $message);
+		 	    echo "END $message";
+		 		 
+		 	}
 
-		 	echo "END $message";
+		 }else{
+
+		 	echo "END No user found";
+
+		 }
+
+		 	
 
 
 
