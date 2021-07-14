@@ -37,8 +37,9 @@ switch ($level) {
 
 		break;
 
-	case 2:
+	case 2:		 
 
+		echo "CON At index 0 = ".$inputArray[0]."\n Index 1 = ".$inputArray[1];
 		 
 		break;
 
