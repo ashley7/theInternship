@@ -74,11 +74,15 @@ switch ($level) {
 				$apikey     = "5c3350028b90259929735448c01796d9b12f765d3a18c5ef1b23106082872934";			 
 				$gateway    = new AfricasTalkingGateway("sandbox", $apikey,"sandbox");
 
-				$gateway->sendMessage($phone_number, $message);  
+				$gateway->sendMessage($phone_number, $message); 
 
+				echo "END Thank you for registering"; 
+
+		 	}else{
+		 		echo "END Failed to register ".$sqliCon->error;
 		 	}
 
-		 	echo "END Thank you for registering";
+
 
 
 

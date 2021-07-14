@@ -1,6 +1,6 @@
 <?php
 
-$sqliCon = new mysqli("localhost","root","");
+$sqliCon = new mysqli("localhost","root","e+-@MNZNNNckyy8PCgTAq+rTXp]zx}");
 
 $sqliCon->query("CREATE DATABASE IF NOT EXISTS ussd");
 
