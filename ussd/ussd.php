@@ -13,7 +13,7 @@ $inputArray = explode("*", $textFromUser);
 
 var_dump($inputArray);
 
-if (count($inputArray) == 0) {
+if (empty($textFromUser)) {
 
 	$response = "CON Welcome to the Climate (U) Limited";
 
@@ -23,6 +23,8 @@ if (count($inputArray) == 0) {
 
 	echo $response;
 	 
+}else{
+	echo "END we have ".$textFromUser;
 }
 
 
