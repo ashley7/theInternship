@@ -11,20 +11,48 @@ $serviceCode = $_POST['serviceCode'];
 
 $inputArray = explode("*", $textFromUser);
 
- 
-if (empty($textFromUser)) {
+$level = count($inputArray);
 
-	$response = "CON Welcome to the Climate (U) Limited";
+switch ($level) {
 
-	$response .= "\n 1. Register";
+	case 0:
 
-	$response .= "\n 2. Add a tree";
+		$response = "CON Welcome to the Climate (U) Limited";
 
-	echo $response;
+	    $response .= "\n 1. Register";
+
+	    $response .= "\n 2. Add a tree";
+
+	    echo $response;
+
+		break;
+
+	case 1:
+
+		 
+		break;
+
+	case 2:
+
+
 	 
-}else{
-	echo "END we have ".$textFromUser;
+		break;
+	
+	default:
+
+		echo"The option selected is not valid";
+		
+		break;
 }
+
+
+ 
+if ($level == 0) {
+
+	
+	 
+}  
+
 
 
 
