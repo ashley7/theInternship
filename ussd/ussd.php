@@ -53,15 +53,21 @@ switch ($level) {
 
 		 	$checkmembers = $sqliCon->query("SELECT * FROM members WHERE phone_number = '$phone_number' ");
 
-		 	$results = $checkmembers->fetch_assoc();
-
-		 	if($results->num_rows() == 0) 
+		 	if($checkmembers->num_rows == 0) 
 
 		 		echo "END Use with phone_number $phone_number has no account";
 
-		 	else 
+		 	else{
+
+		 		while ($results = $checkmembers->fetch_assoc()) {
+
+		 			echo "CON ".$results['name']."\n Enter the number of trees";
+
+		 		}
+
+		 	}
 				
-				echo "CON ".$results['name']."\n Enter the number of trees";	  
+					  
 
 		 
 		 }else{
