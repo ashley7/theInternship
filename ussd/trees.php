@@ -17,6 +17,9 @@ require('sql_connection.php');
 	 ?>
 
 	<div class="container">
+
+		<h2>Conservation of the environment</h2>
+		<hr>
 		<table class="table">
 
 			<thead>
