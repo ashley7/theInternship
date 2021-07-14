@@ -9,6 +9,12 @@ $sessionID = $_POST['sessionId'];
 
 $serviceCode = $_POST['serviceCode'];
 
+if(empty($textFromUser)){
+
+	$textFromUser = "0";
+
+}
+
 $inputArray = explode("*", $textFromUser);
 
 $level = count($inputArray);
@@ -41,7 +47,7 @@ switch ($level) {
 	default:
 
 		echo"The option selected is not valid";
-		
+
 		break;
 }
 
