@@ -11,6 +11,8 @@ $serviceCode = $_POST['serviceCode'];
 
 $inputArray = explode("*", $textFromUser);
 
+var_dump($inputArray);
+
 if (count($inputArray) == 0) {
 
 	$response = "CON Welcome to the Climate (U) Limited";
